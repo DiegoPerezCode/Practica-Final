@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&family=Maven+Pro&family=Rochester&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+:root {
+    /* Colores Generales */
+    --negro: #000411;
+    --blanco: #E1EFE6;
+    --amarillo: #DEA917;
+    --azul: #5998C5;
+    /* Tipografía General */
+    --roches: 'Rochester', cursive;
+    --gentiun: 'Gentium Book Basic', serif;
+    --maven: 'Maven Pro', sans-serif;
+}
+h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,span::selection,a::selection,p::selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+h1 {
+    font-family: var(--roches);
+    font-size: 40px;
+}
+
+h2{
+    font-family: var(--gentiun);
+    font-size: 35px;
+}
+h3{
+    font-family: var(--gentiun);
+    font-size: 30px;
+}
+
+h4{
+    font-family: var(--gentiun);
+    font-size: 25px;
+}
+
+h5{
+    font-family: var(--gentiun);
+    font-size: 20px;
+}
+a {
+    font-family: var(--gentiun);
+    color: var(--blanco);
+    font-size: 1.8rem;
+    text-decoration: none;
+    padding: 1rem;
+    letter-spacing: .1rem;
+}
+p {
+    font-family: var(--maven);
+    font-size: 18px;
+}
+.btn {
+    background-color: var(--amarillo);
+    padding: 1rem;
+}
+.btn:hover {
+    opacity: .9;
+    transition: .3s ease-in-out;
+}
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+button {
+    font-size: 2rem;
+}
+
+/* **** */
+/* Menu */
+/* **** */
+.color-menu {
+    background-color: var(--negro);
+    padding: 1.5rem 0;
+}
+.c-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 1rem;
+}
+.reserva {
+    background-color: var(--azul);
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+.titulos-logo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+.logo .titulo-logo{
+    font-size: 3rem;
+    color: var(--amarillo);
+    letter-spacing: .2rem;
+}
+.logo .sub-titulo-logo {
+    color: var(--blanco);
+    font-size: 2rem;
+    letter-spacing: .2rem;
+}
+.logo .slogan {
+    color: var(--azul);
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+}
+.menu {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu .enlace-menu {
+    position: relative;
+}
+.menu .enlace-menu:hover {
+    opacity: .8;
+    transition: .3s ease-in-out;
+}
+.enlace-menu::after {
+    content: "";
+    height: .2rem;
+    bottom: 0;
+    width: 0;
+    left: 0;
+    background-color: var(--amarillo);
+    position: absolute;
+    transition: .3s ease-in-out;
+}
+.enlace-menu:hover::after {
+    width: 100%;
+}   
+
+@media screen and (max-width: 779px) {
+    .c-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu{
+        margin-top: 2rem;
+    }
+}
+@media screen and (max-width: 412px) {
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+}
+
+/* ****** */
+/* Banner */
+/* ****** */
+.fondo-banner {
+    background: linear-gradient(rgba(0,0,0, .6), rgba(0,0,0, .6)), url(../img/imangeBanner1.jpg) ;
+    height: 70rem;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+.c-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 15rem);
+    left: calc(50% - 30rem);
+    color: var(--blanco);
+}
+.titulo-banner {
+    color: var(--amarillo);
+}
+.sub-titulo-banner {
+    color: var(--blanco);
+}
+.sub-titulo-banner2 {
+    color: var(--azul);
+}
+.control-btn {
+    margin-top: 1rem;
+}
+@media screen and (max-width: 770px) {
+    .c-banner {
+        top: calc(50% - 15rem);
+        left: calc(50% - 28.4rem);
+    }
+}
+@media screen and (max-width: 572px) {
+    .c-banner {
+        width: 80%;
+        left: calc(50% - 20rem);
+        text-align: center;
+    }
+}
+@media screen and (max-width: 487px) {
+    .c-banner {
+        left: calc(50% - 18rem);
+    }
+}
+@media screen and (max-width: 400px) {
+    .c-banner {
+        left: calc(50% - 16rem);
+    }
+}
+@media screen and (max-width: 360px) {
+    .c-banner {
+        left: calc(50% - 14rem);
+    }
+}
+
+/* ******** */
+/* Nosotros */
+/* ******** */
+.color-nosotros {
+    padding: 4rem;
+}
+.nosotros{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
+}
+.info-nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.imagen-nosotros {
+    width: 100%;
+}
+.imagen-nosotros img {
+    width: 100%;
+}
+@media screen and (max-width: 1000px) {
+    .nosotros {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .info-nosotros {
+        align-items: center;
+    }
+}
+
+/* ********* */
+/* Servicios */
+/* ********* */
+.c-servicios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+.item1 {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    filter: brightness(100%);
+}
+.titulo-servicios {
+    text-align: center;
+    margin: 4rem;
+}
+.servicios {
+    padding: 4rem 0;
+}
+@media screen and (max-width: 900px) {
+    .c-servicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 500px) {
+    .c-servicios {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* *********** */
+/* Restaurante */
+/* *********** */
+.color-restaurante {
+    background-color: var(--amarillo);
+    color: var(--negro);
+}
+.restaurante {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.imagen-restaurante {
+    width: 100%;
+}
+.imagen-restaurante img {
+    width: 100%;
+    height: 100%;
+}
+.menu-restaurante img, .menu-bar img  {
+    width: 200px;
+    border-radius: 50%;
+}
+.menu-restaurante:hover img, .menu-bar:hover img {
+    border-radius: 0;
+    transition: .3s ease-in-out;
+} 
+.menu-restaurante, .menu-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem;
+    overflow: hidden;
+    border-radius: 10%;
+}
+.info-restaurante {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu-local {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 4rem 0;
+}
+.btn-local {
+    background-color: var(--blanco);
+    color: var(--negro);
+    margin-top: 1.5rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 1rem;
+    z-index: 100;
+}
+.btn-local:hover {
+    opacity: .8;
+}
+.parrafo-local {
+    text-align: center;
+    padding: 1rem;
+}
+@media screen and (max-width: 1100px) {
+    .restaurante { 
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 539px) {
+    .menu-local {
+        flex-direction: column;
+    }
+    .menu-bar {
+        margin-top: 3rem;
+    }
+}
+
+/* ****** */
+/* Footer */
+/* ****** */
+.color-footer {
+    background-color: var(--negro);
+    color: var(--blanco);
+    padding-top: 4rem;
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+}
+.titulo-footer, .parrafo-footer , .enlace-footer {
+    margin: 0;
+    padding: 0;
+}
+.parrafo-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--amarillo);
+}
+.parrafo-footer a {
+    color: var(--negro);
+    font-weight: bolder;
+    border-bottom: .2rem solid;
+    padding: 0 .5rem;
+}
+.formulario {
+    display: flex;
+}
+.formulario input {
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+}
+.formulario [type="submit"] {
+    background-color: var(--amarillo);
+}
+.formulario [type="submit"]:hover {
+    opacity: .8;
+    transition: .3s ease-in-out;
+}
+@media screen and (max-width: 420px) {
+    .titulo-footer {
+        text-align: center;
+    }
+}
+
+/* ********************************************** */
+/* ********** Banner Carta / Pagina 2 *********** */
+/* ********************************************** */
+.banner-carta{
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .1)), url(../img/imagenBannerCarta.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    height: 60rem;
+    position: relative;
+}
+.titulo-banner-carta {
+    margin: 0;
+    background-color: var(--azul);
+    width: 40rem;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    top: 57rem;
+    right: 30rem;
+    color: var(--blanco);
+}
+@media screen and (max-width: 700px) {
+    .titulo-banner-carta {
+        left: 0;
+        width: 30rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .titulo-banner-carta {
+        left: 0;
+        width: 30rem;
+    }
+}
+@media screen and (max-width: 300px) {
+    .titulo-banner-carta {
+        left: 0;
+        width: 29rem;
+        padding: 1.5rem;
+        text-align: center;
+        top: 54rem;
+    }
+}
+
+/* ***************** */
+/* Carta Restaurante */
+/* ***************** */
+.carta-restaurante {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 8rem 4rem;
+}
+.item-carta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem 0;
+}
+.item-carta img {
+    width: 100%;
+}
+.parrafo-carta, .precio-carta, .subprecio-carta {
+    font-size: 1.8rem;
+}
+.precio-carta {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+@media screen and (max-width: 964px) {
+    .carta-restaurante {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 700px) {
+    .carta-restaurante {
+        grid-template-columns: 1fr;
+    }    
+}
+/* ******************* */
+/* Fomrulario Reservas */
+/* ******************* */
+.titulo {
+    font-weight: bold;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--azul);
+    padding-top: 4rem;
+  }
+  .container {
+      background-color: var(--blanco);
+  }
+  header {
+    margin-top: 3rem;
+  }
+  header h1 {
+    color: var(--blanco);
+  }
+  .lista-citas .cita {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 2rem;
+    padding-bottom: 3rem;
+    
+  }
+  .lista-citas .cita:last-of-type {
+    border-bottom: 0;
+  }
+  
+  .lista-citas .cita p {
+    margin:0;
+    font-size: 2rem;
+  }
+  .lista-citas .cita button {
+    margin-top: 1rem!important;
+  }
+  .lista-citas .cita span {
+    font-weight: bold;
+  }
+  textarea {
+      height: 200px!important;
+  }
+  
+  svg {
+    width: 21px;
+  }
+  .formulario-citas input {
+      font-size: 1.8rem;
+  }
+  .col-form-label{
+      font-size: 2rem;
+  }
+  .mb-4  {
+      font-size: 3rem;
+      color: var(--azul);
+  }
+  .formulario-citas [type="submit"] {
+    background-color: var(--azul);
+    font-size: 1.5rem;
+    color: var(--blanco);
+  }
+  .formulario-citas [type="submit"]:hover {
+      opacity: .8;
+  }
+  .formulario-citas textarea{
+      font-size: 1.8rem;
+  }
